@@ -42,6 +42,20 @@ namespace App.Controllers
             return a;
         }
         /// <summary>
+        /// Retorna uma lista de usuarios com base em seu tipo
+        /// </summary>
+        /// <param name="especialidade"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("gettipo/{tipo}")]
+        [AuthorizeUser(AccessLevel = "USUARI")]
+        public IEnumerable<Usuarios> GetByTipo(int tipo)
+        {
+            UsuariosRepository rep = new UsuariosRepository();
+            var a = rep.GetAll(e => e.Tipo == tipo);
+            return a;
+        }
+        /// <summary>
         /// Pega um usuário específico para ser editado
         /// </summary>
         /// <param name="id"></param>
@@ -75,13 +89,16 @@ namespace App.Controllers
 
                     rep.Add(usuarios);
 
-                    if (usuarios.Responsavel == 0)
+                    if (Convert.ToInt32(TipoUsuario.PACIENTE) != usuarios.Tipo)
                     {
-                        var a = rep.GetById(usuarios.Id);
-                        if (a.Id > 0)
+                        if (usuarios.Responsavel == 0)
                         {
-                            a.Responsavel = a.Id;
-                            rep.Update(a);
+                            var a = rep.GetById(usuarios.Id);
+                            if (a.Id > 0)
+                            {
+                                a.Responsavel = a.Id;
+                                rep.Update(a);
+                            }
                         }
                     }
 
