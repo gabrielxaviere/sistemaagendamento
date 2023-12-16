@@ -1,0 +1,14 @@
+C:\Projetos\Projects\In progress\SistemaPonto\Data\bin\Release\net7.0\Data.deps.json
+C:\Projetos\Projects\In progress\SistemaPonto\Data\bin\Release\net7.0\Data.runtimeconfig.json
+C:\Projetos\Projects\In progress\SistemaPonto\Data\bin\Release\net7.0\Data.dll
+C:\Projetos\Projects\In progress\SistemaPonto\Data\bin\Release\net7.0\Data.pdb
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.csproj.AssemblyReference.cache
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.AssemblyInfoInputs.cache
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.AssemblyInfo.cs
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.csproj.CoreCompileInputs.cache
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.dll
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\refint\Data.dll
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.pdb
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\Data.genruntimeconfig.cache
+C:\Projetos\Projects\In progress\SistemaPonto\Data\obj\Release\net7.0\ref\Data.dll

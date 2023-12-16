@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:App.Controllers.ConsultasController.Get(System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.String)">
+            <summary>
+            Método de pesquisa de consultas considerando parâmetros como:
+            </summary>
+            <param name="data">Data de pesquisa</param>
+            <param name="status">Status relacionado à consulta</param>
+            <param name="responsavel">Administrador responsavel pelo grupo de usuários cadastrados</param>
+            <param name="idUsuario">id do usuário que faz a requisição</param>
+            <param name="nome">Campo para pesquisa</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.ConsultasController.GetForEdit(System.Int32)">
+            <summary>
+            Obter a consulta para ser editada
+            </summary>
+            <param name="id">id relacionado à consulta</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.ConsultasController.Create(Data.Models.Consultas)">
+            <summary>
+            Método usado para criar consultas
+            </summary>
+            <param name="usuarios"></param>
+            <returns>Retorna o Id do usuário criado</returns>
+        </member>
+        <member name="M:App.Controllers.ConsultasController.Cancelar(System.Int32)">
+            <summary>
+            Cancelar consulta pelo id fornecido como parâmetro
+            </summary>
+            <param name="id">Parâmetro usado como chave na consulta</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.EspecialidadesController.Get">
+            <summary>
+            Método que retorna todas as especialidades do banco
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.EspecialidadesController.GetForEdit(System.Int32)">
+            <summary>
+            Pegar especialidade para editar
+            </summary>
+            <param name="id">id da especialidade</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.EspecialidadesController.Create(Data.Models.Especialidades)">
+            <summary>
+                Criar especialidade
+            </summary>
+            <param name="usuarios"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.EspecialidadesController.Update(Data.Models.Especialidades)">
+            <summary>
+                Atualizar especialidade 
+            </summary>
+            <param name="usuarios"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.EspecialidadesController.Delete(System.Int32)">
+            <summary>
+            Deletar especialidade
+            </summary>
+            <param name="id">id da especialidade</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.EspecialidadesController.GetCombo(System.Int32)">
+            <summary>
+            Pegar lista de especialidade
+            </summary>
+            <param name="id">id da especialidade</param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.LoginController.Get(System.String,System.String)">
+            <summary>
+            Método para realizar login no sistema, recebendo o email e a senha
+            </summary>
+            <param name="email"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.UsuariosController.Get(System.Nullable{System.Int32},System.String)">
+            <summary>
+            Retorna uma lista de usuários com base nos parâmetros fornecidos
+            </summary>
+            <param name="responsavel"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.UsuariosController.GetProfissional(System.Int32)">
+            <summary>
+            Retorna uma lista de profissionais com base na especialidade
+            </summary>
+            <param name="especialidade"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.UsuariosController.GetForEdit(System.Int32)">
+            <summary>
+            Pega um usuário específico para ser editado
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.UsuariosController.Create(Data.Models.Usuarios)">
+            <summary>
+            Cria um novo usuário com base nas informações fornecidas
+            </summary>
+            <param name="usuarios"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.UsuariosController.Update(Data.Models.Usuarios)">
+            <summary>
+            Atualiza informações do usuário
+            </summary>
+            <param name="usuarios"></param>
+            <returns></returns>
+        </member>
+        <member name="M:App.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta usuário com base no id
+            </summary>
+            <param name="id">Id do usuário a ser deletado</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
