@@ -1,3 +1,5 @@
 ﻿.vs
 API/obj
 Data/bin
+Data/obj
+ServicoEmail/obj

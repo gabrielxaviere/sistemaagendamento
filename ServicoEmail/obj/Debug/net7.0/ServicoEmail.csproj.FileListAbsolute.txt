@@ -1,5 +1,0 @@
-C:\Projetos\Projects\In progress\SistemaPonto\ServicoEmail\obj\Debug\net7.0\ServicoEmail.csproj.AssemblyReference.cache
-C:\Projetos\Projects\In progress\SistemaPonto\ServicoEmail\obj\Debug\net7.0\ServicoEmail.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projetos\Projects\In progress\SistemaPonto\ServicoEmail\obj\Debug\net7.0\ServicoEmail.AssemblyInfoInputs.cache
-C:\Projetos\Projects\In progress\SistemaPonto\ServicoEmail\obj\Debug\net7.0\ServicoEmail.AssemblyInfo.cs
-C:\Projetos\Projects\In progress\SistemaPonto\ServicoEmail\obj\Debug\net7.0\ServicoEmail.csproj.CoreCompileInputs.cache
