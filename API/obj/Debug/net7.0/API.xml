@@ -107,6 +107,13 @@
             <param name="especialidade"></param>
             <returns></returns>
         </member>
+        <member name="M:App.Controllers.UsuariosController.GetByTipo(System.Int32)">
+            <summary>
+            Retorna uma lista de usuarios com base em seu tipo
+            </summary>
+            <param name="especialidade"></param>
+            <returns></returns>
+        </member>
         <member name="M:App.Controllers.UsuariosController.GetForEdit(System.Int32)">
             <summary>
             Pega um usuário específico para ser editado
