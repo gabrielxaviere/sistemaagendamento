@@ -1,5 +1,6 @@
 using App._Core;
 using App._Core.Models;
+using Data.List;
 using Data.Models;
 using Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,33 @@ namespace App.Controllers
             ConsultasRepository rep = new ConsultasRepository();
 
             var consultas = rep.GetAll(e =>
+                (string.IsNullOrEmpty(nome) || e.Usuarios.Nome.Contains(nome)) &&
+                (!data.HasValue || e.Data.Date.Equals(data.Value.Date)) &&
+                (!status.HasValue || e.Status == status.Value) &&
+                 (!idUsuario.HasValue || e.IdPaciente == idUsuario.Value) &&
+                 (!responsavel.HasValue || e.Usuarios.Responsavel == responsavel.Value)
+            );
+
+            return consultas;
+        }
+
+        /// <summary>
+        /// Método de pesquisa de consultas incluindo o nome do médico considerando parâmetros como:
+        /// </summary>
+        /// <param name="data">Data de pesquisa</param>
+        /// <param name="status">Status relacionado à consulta</param>
+        /// <param name="responsavel">Administrador responsavel pelo grupo de usuários cadastrados</param>
+        /// <param name="idUsuario">id do usuário que faz a requisição</param>
+        /// <param name="nome">Campo para pesquisa</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("getwithmedicos")]
+        [AuthorizeUser(AccessLevel = "USUARI")]
+        public IEnumerable<ConsultaList> GetWithMedicos(DateTime? data, int? status, int? responsavel, int? idUsuario, string nome = "")
+        {
+            ConsultasRepository rep = new ConsultasRepository();
+
+            var consultas = rep.GetAllWithMedico(e =>
                 (string.IsNullOrEmpty(nome) || e.Usuarios.Nome.Contains(nome)) &&
                 (!data.HasValue || e.Data.Date.Equals(data.Value.Date)) &&
                 (!status.HasValue || e.Status == status.Value) &&
