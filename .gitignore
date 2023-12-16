@@ -1,6 +1,7 @@
 ﻿.vs
+API/bin
 API/obj
 Data/bin
 Data/obj
+ServicoEmail/bin
 ServicoEmail/obj
-API/bin
