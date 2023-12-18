@@ -78,7 +78,8 @@ namespace App.Controllers
             ConsultasRepository rep = new ConsultasRepository();
 
             var consultas = rep.GetAll(e =>
-                 (!responsavel.HasValue || e.Usuarios.Responsavel == responsavel.Value)
+                 (!responsavel.HasValue || e.Usuarios.Responsavel == responsavel.Value) &&
+                 (!responsavel.HasValue || e.Usuarios.Status == 0)
             );
 
             return consultas;
