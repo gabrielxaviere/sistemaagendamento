@@ -87,24 +87,29 @@ namespace App.Controllers
 
                     UsuariosRepository rep = new UsuariosRepository();
 
-                    rep.Add(usuarios);
+                    var usuarioExistente = rep.GetUserByEmail(usuarios.Email);
 
-                    if (Convert.ToInt32(TipoUsuario.PACIENTE) != usuarios.Tipo)
+                    if (usuarioExistente.Id <= 0)
                     {
-                        if (usuarios.Responsavel == 0)
+                        rep.Add(usuarios);
+
+                        if (Convert.ToInt32(TipoUsuario.PACIENTE) != usuarios.Tipo)
                         {
-                            var a = rep.GetById(usuarios.Id);
-                            if (a.Id > 0)
+                            if (usuarios.Responsavel == 0)
                             {
-                                a.Responsavel = a.Id;
-                                rep.Update(a);
+                                var a = rep.GetById(usuarios.Id);
+                                if (a.Id > 0)
+                                {
+                                    a.Responsavel = a.Id;
+                                    rep.Update(a);
+                                }
                             }
                         }
+
+                        return Ok(new CreateReturn(usuarios.Id));
                     }
-
-                    return Ok(new CreateReturn(usuarios.Id));
+                    return NoContent();
                 }
-
                 return NoContent();
             }
             catch (Exception e)
