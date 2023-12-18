@@ -3,7 +3,7 @@ using System.Net.Mail;
 
 namespace ServicoEmail
 {
-    internal class SendEmail
+    public class SendEmail
     {
         public void SendEmailAsync()
         {

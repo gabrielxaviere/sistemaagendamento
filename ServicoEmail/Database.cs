@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 namespace ServicoEmail
 {
-    internal class Database
+    public class Database
     {
         public void ConnectionDatabase()
         {
@@ -16,7 +16,8 @@ namespace ServicoEmail
 
                 if (resultado != null)
                 {
-
+                    SendEmail sendEmailInstance = new SendEmail();
+                    sendEmailInstance.SendEmailAsync();
                 }
                 else
                 {

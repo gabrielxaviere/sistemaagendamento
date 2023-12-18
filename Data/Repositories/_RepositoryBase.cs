@@ -68,7 +68,7 @@ namespace Data.Repositories
 
     public static class conn
     {
-        public const string connectionString = "Server=(local);Database=TCCSistemaAgengamento;Trusted_Connection=True;Trust Server Certificate=true";
+        public const string connectionString = "Server=localhost\\SQLEXPRESS;Database=TCCSistemaAgengamento;Trusted_Connection=True;Trust Server Certificate=true";
 
         //public const string connectionString = "Server=mobmserve.database.windows.net;Database=MOBMDB;User Id=usr_application;Password=eD@4DvotEz";
 

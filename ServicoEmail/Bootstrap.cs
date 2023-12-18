@@ -4,7 +4,8 @@
     {
         public void Start()
         {
-            //do something...
+            Database database = new Database();
+            database.ConnectionDatabase();
         }
 
         public void Stop()
