@@ -89,7 +89,7 @@ namespace App.Controllers
 
                     var usuarioExistente = rep.GetUserByEmail(usuarios.Email);
 
-                    if (usuarioExistente.Id <= 0)
+                    if (usuarioExistente != null)
                     {
                         rep.Add(usuarios);
 
