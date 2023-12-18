@@ -71,15 +71,17 @@ namespace App.Controllers
         /// <param name="responsavel"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("getalldisableddate/{responsavel}")]
+        [Route("getalldisableddate")]
         [AuthorizeUser(AccessLevel = "USUARI")]
-        public IEnumerable<Consultas> GetAllDisabledDate(int? responsavel)
+        public IEnumerable<Consultas> GetAllDisabledDate(int? responsavel, int? especialista)
         {
             ConsultasRepository rep = new ConsultasRepository();
 
             var consultas = rep.GetAll(e =>
                  (!responsavel.HasValue || e.Usuarios.Responsavel == responsavel.Value) &&
-                 (!responsavel.HasValue || e.Usuarios.Status == 0)
+
+                 (!responsavel.HasValue || e.IdProfissional == especialista) &&
+                 (!responsavel.HasValue || e.Status == 0)
             );
 
             return consultas;
