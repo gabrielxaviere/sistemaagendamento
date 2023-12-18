@@ -114,7 +114,7 @@ namespace App.Controllers
                 if (ModelState.IsValid)
                 {
                     ConsultasRepository rep = new ConsultasRepository();
-                    usuarios.Data.AddHours(-3);
+                    usuarios.Data = usuarios.Data.AddHours(-3);
 
                     rep.Add(usuarios);
 
