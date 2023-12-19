@@ -33,12 +33,12 @@ namespace App.Controllers
         /// <param name="especialidade"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("getprofissional/{especialidade}")]
+        [Route("getprofissional")]
         [AuthorizeUser(AccessLevel = "USUARI")]
-        public IEnumerable<Usuarios> GetProfissional(int especialidade)
+        public IEnumerable<Usuarios> GetProfissional(int especialidade, int? responsavel)
         {
             UsuariosRepository rep = new UsuariosRepository();
-            var a = rep.GetAll(e => e.Tipo == (int)TipoUsuario.PROFISSIONAL_SAUDE && e.IdEspecialidade == especialidade);
+            var a = rep.GetAll(e => e.Tipo == (int)TipoUsuario.PROFISSIONAL_SAUDE && e.IdEspecialidade == especialidade && e.Responsavel == responsavel);
             return a;
         }
         /// <summary>
