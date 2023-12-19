@@ -130,7 +130,7 @@ namespace App.Controllers
             UsuariosRepository rep = new UsuariosRepository();
             var usr = rep.GetById(usuarios.Id);
 
-            if (Criptography.AesEncrypt(usuarios.Senha) == usr.Senha)
+            if (usuarios.Senha == usr.Senha)
             {
                 usr.Senha = Criptography.AesEncrypt(usuarios.Senha);
                 usr.Nome = usuarios.Nome;
