@@ -3,6 +3,7 @@ using App._Core.Models;
 using Data.List;
 using Data.Models;
 using Data.Repositories;
+using Data.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.Controllers
@@ -53,14 +54,32 @@ namespace App.Controllers
         public IEnumerable<ConsultaList> GetWithMedicos(DateTime? data, int? status, int? responsavel, int? idUsuario, string nome = "")
         {
             ConsultasRepository rep = new ConsultasRepository();
+            UsuariosRepository repUser = new UsuariosRepository();
 
-            var consultas = rep.GetAllWithMedico(e =>
+            Usuarios user = repUser.GetById(idUsuario.Value);
+
+            List<ConsultaList> consultas = new List<ConsultaList>();
+
+            if (user.Tipo == (int)TipoUsuario.PROFISSIONAL_SAUDE)
+            {
+                consultas = rep.GetAllWithMedico(e =>
+                (string.IsNullOrEmpty(nome) || e.Usuarios.Nome.Contains(nome)) &&
+                (!data.HasValue || e.Data.Date.Equals(data.Value.Date)) &&
+                (!status.HasValue || e.Status == status.Value) &&
+                 (!idUsuario.HasValue || e.IdProfissional == idUsuario.Value) &&
+                 (!responsavel.HasValue || e.Usuarios.Responsavel == responsavel.Value)
+                ).ToList();
+            }
+            else
+            {
+                consultas = rep.GetAllWithMedico(e =>
                 (string.IsNullOrEmpty(nome) || e.Usuarios.Nome.Contains(nome)) &&
                 (!data.HasValue || e.Data.Date.Equals(data.Value.Date)) &&
                 (!status.HasValue || e.Status == status.Value) &&
                  (!idUsuario.HasValue || e.IdPaciente == idUsuario.Value) &&
                  (!responsavel.HasValue || e.Usuarios.Responsavel == responsavel.Value)
-            );
+            ).ToList();
+            }
 
             return consultas;
         }
