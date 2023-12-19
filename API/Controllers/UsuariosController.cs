@@ -133,6 +133,10 @@ namespace App.Controllers
             if (Criptography.AesEncrypt(usuarios.Senha) == usr.Senha)
             {
                 usr.Senha = Criptography.AesEncrypt(usuarios.Senha);
+                usr.Nome = usuarios.Nome;
+                usr.Sobrenome = usuarios.Sobrenome;
+                usr.Email = usuarios.Email;
+                usr.Tipo = usuarios.Tipo;
                 rep.Update(usr);
             }
             else
